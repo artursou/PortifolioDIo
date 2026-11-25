@@ -33,6 +33,16 @@
     font-size: 1.25rem;
 }
 
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
 .information p::before {
     content: "";
     display: inline-block;
@@ -57,4 +67,29 @@
 
 .information .phone::before {
     background-image:url("/asstes/img/icons/phone.svg");
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+            "photo title"
+            "photo information"
+        ;
+    }
+
+    .header .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .title {
+        grid-area: title;
+        text-align: start;
+        max-width: 200px;
+    }
+
+    .header .information {
+        grid-area: information;
+    }
 }
